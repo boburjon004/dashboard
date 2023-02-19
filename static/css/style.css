@@ -1,0 +1,211 @@
+.layout {
+    margin-top: 2.4rem;
+  }
+  
+  .layout > .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .layout__box {
+    width: 90%;
+    max-width: 30rem;
+    min-height: 16rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -46%);
+    background-color: skyblue;
+    border-radius: 1rem;
+    box-shadow: 1px 1px 6px 3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    height: 85%;
+
+  }
+  .layout__boxHeader {
+    display: flex;
+    padding: 0.7rem;
+    background-color: aquamarine;
+  }
+  .layout__boxTitle {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+
+  
+  .layout__boxTitle svg {
+    width: 1.6rem;
+    height: 1.6rem;
+    fill: var(--color-main);
+  }
+  .layout__body {
+    margin: 1rem;
+  }
+  .auth__tagline {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--color-main);
+    font-weight: 500;
+
+  }
+  .form__groups {
+    width: 100%;
+
+  }
+  
+  .form__split {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .form__group label {
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 1rem;    
+  }
+  
+  .form__group input,
+  .form__group textarea,
+  .form__group select {
+    background-color: white;
+    border: 1px solid var(--color-dark-light);
+    padding: 0.4rem;
+    border-radius: 3px;
+    width: 100%;
+    color: dark;
+  }
+  
+  .form__group input:focus,
+  .form__group textarea:focus {
+    border-color: blue;
+  }
+  
+  .form__group textarea {
+    background: transparent;
+    resize: none;
+  }
+  
+  .form__group select {
+    color: white;
+    font-weight: 400;
+  }
+  
+  .form__group select option {
+    background-color: white;
+    color: white;
+    padding: 0 10rem;
+  }
+  
+  .form__action {
+    display: flex;
+    justify-content: flex-end;
+    gap: 3rem;
+  }
+  
+  .form__hide {
+    position: absolute;
+    left: -9999px;
+  }
+  .btn {
+    background-color: transparent;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    transition: all ease-in-out 0.3s;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.15);
+    font-weight: 500;
+  }
+  .btn--main {
+    background-color: white;
+    color: var(--color-dark);
+  }
+  .btn--link {
+    border-radius: 0;
+    padding: 0;
+    color: rgb(44, 82, 208);
+    box-shadow: none;
+  }
+  
+  .btn--link:hover {
+    border: 1px solid rgb(44, 82, 208);
+
+
+  }
+  
+  .btn--main {
+    background-color: gold;
+    margin-top: 1.5rem;
+    margin-left: 160px;
+    color: var(--color-dark);
+  }
+  
+  .btn:hover {
+    opacity: 0.9;
+  }
+  
+  .btn--dark {
+    background-color: var(--color-dark-light);
+    color: var(--color-light);
+  }
+  
+  .btn > svg {
+    fill: currentColor;
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+  
+  .btn--pill {
+    border-radius: 10rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    padding: 3px 1.5rem;
+    background: transparent;
+    border: 2px solid var(--color-main);
+  }
+  
+  .action-button {
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  auth__tagline {
+    text-align: center;
+    color: var(--color-main);
+    font-weight: 500;
+    font-size: 1.8rem;
+  }
+  .auth .layout__boxHeader {
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .auth__action {
+    text-align: center;
+
+    margin-top: 10px;
+  
+
+  }
+  .room_name{
+    padding-top: 10px;
+  }
+.nom{
+  margin-left: 150px;
+}
+.mon{
+  margin-top: -50px;
+  width: 400px;
+  height:420px;
+}
+.hello-msg{
+  color: #fff;
+  font-size: 18px;
+  margin-right: 20px;
+}

@@ -1,1 +1,56 @@
-<h3>Login</h3>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CRM</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<style>
+  body{
+    background-color: #4cb4c7;
+  }
+</style>
+{% block content %}
+<main class="auth layout">
+
+    <div class="container">
+      <div class="layout__box mon">
+        <div class="layout__boxHeader">
+          <div class="layout__boxTitle">
+            <h3>Login</h3>
+          </div>
+        </div>
+        <div class="layout__body">
+  
+          <form class="form" action="" method="POST">
+            {% csrf_token %}
+
+            <div class="form__group form__group">
+              <label>Username</label>
+              <input type="text" name="username" placeholder="Enter your username" class="form-control" />
+            </div>
+            <div class="form__group">
+              <label>Password</label>
+              <input type="password" name="password" class="form-control" placeholder="Enter your password here" />
+            </div>
+  
+          <input type="submit" value="Login" class="btn login_btn", style="margin-left: 150px; background-color: gold; margin-top: 15px;">
+     
+  
+          </form>
+          {% for message in messages %}
+          <p id="messages">{{message}}</p>
+          {% endfor %}
+          <div class="auth__action">
+            <p>Haven't signed up yet?</p>
+            <a href="{% url 'register' %}" class="btn btn--link">Sign Up</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+{% endblock content %}

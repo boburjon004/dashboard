@@ -1,12 +1,68 @@
-<h3>Register</h3>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CRM</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<style>
+  body{
+    background-color: #4cb4c7;
+  }
+</style>
+{% block content %}
+
+  <div class="container">
+    <div class="layout__box">
+      <div class="layout__boxHeader">
+        <div class="layout__boxTitle">
+          <h3 style="margin-left: 160px">Register</h3>
+        </div>
+      </div>
+      <div class="layout__body">
+        {{form.errors}}
+        <form class="form" action="" method="POST">
+          {% csrf_token %}
+          <div class="form__group form__groups">
+            <span class='room_name'>
+            {{form.username.label}}
+        
+            {{form.username}}
+           </span>
+           <span class='room_name'>
+            <br>
+            {{form.email.label}}
+
+            {{form.email}}
+           </span>
+           <span class='room_name'>
+            <br>
+            {{form.password1.label}}
+
+            {{form.password1}}
+           </span>
+           <span class='room_name'>
+            <br>
+            {{form.password1.label}}
+            {{form.password2}}
+           </span>
+          </div>
+     
 
 
+          <input class="btn btn--main" type="submit" name="Submit">
+        </form>
 
-<form method='POST' action="">
-    {% csrf_token %}
-    {{form.username.label}}
-    {{form.username}}
+        <div class="auth__action">
+          <p>Already signed up yet?</p>
+          <a href="{% url 'login' %}" class="btn btn--link">Sign In</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<input type="submit" name="Register" />
-</form>
-
+</main>
+{% endblock content %}
