@@ -6,7 +6,7 @@ from django import forms
 
 
 
-class Orderform(ModelForm):
+class OrderForm(ModelForm):
     class Meta:
         model= Order
         fields='__all__'
