@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, AbstractUser
 # Create your models here.
 
 class Customer(models.Model):
@@ -10,8 +10,8 @@ class Customer(models.Model):
     profile_pic=models.ImageField(null=True, blank=True)
     date_created = models.DateTimeField(auto_now_add=True, null=True)
     
-    
-
+    def __str__(self):
+        return self.name
     
     
 class Tag(models.Model):
@@ -50,4 +50,8 @@ class Order(models.Model):
     
     def __str__(self):
         return self.product.name
-    
+
+
+
+
+   
