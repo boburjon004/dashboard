@@ -37,13 +37,13 @@
             </div>
   
           <input type="submit" value="Login" class="btn login_btn", style="margin-left: 150px; background-color: gold; margin-top: 15px;">
-     
   
           </form>
           {% for message in messages %}
           <p id="messages">{{message}}</p>
           {% endfor %}
           <div class="auth__action">
+            <a class="btn btn-outline-danger" href="{% url 'reset_password' %}" role="button">Forgot your password!</a>
             <p>Haven't signed up yet?</p>
             <a href="{% url 'register' %}" class="btn btn--link">Sign Up</a>
           </div>

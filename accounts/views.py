@@ -1,20 +1,18 @@
-from django.shortcuts import render, redirect
-from django.http import HttpResponse
-from django.forms import inlineformset_factory
+from django.contrib import messages
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 
-from django.contrib.auth import authenticate, login, logout
+from django.forms import inlineformset_factory
+from django.http import HttpResponse
+from django.shortcuts import redirect, render
 
-from django.contrib import messages
-
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth.models import Group
-
+from .decorators import admin_only, allowed_users, unauthenticated_user
+from .filters import OrderFilter
+from .forms import *
 # Create your views here.
 from .models import *
-from .forms import *
-from .filters import OrderFilter
-from .decorators import unauthenticated_user, admin_only, allowed_users
+
 
 @unauthenticated_user
 def registerPage(request):
@@ -25,8 +23,8 @@ def registerPage(request):
             user = form.save()
             username = form.cleaned_data.get('username')
 
-            group = Group.objects.get(name='customer')
-            user.groups.add(group)
+
+         
 
             messages.success(request, 'Account was created for ' + username)
 
@@ -80,6 +78,7 @@ def home(request):
 
 
 @login_required(login_url='login')
+@allowed_users(allowed_roles=['customer'])
 def userPage(request):
     orders = Order.objects.all()
     
@@ -93,6 +92,7 @@ def userPage(request):
 
 
 @login_required(login_url='login')
+@allowed_users(allowed_roles=['customer'])
 def accountSet(request):
     customer=request.user.customer
     form = CustomerForm(instance=customer)
