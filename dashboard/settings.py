@@ -69,7 +69,7 @@ WSGI_APPLICATION = 'dashboard.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
@@ -129,9 +129,4 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'yaxyoxojayevbobur345@gmail.com'
-EMAIL_HOST_PASSWORD = 'L3fDZee7i3bFSgd'
-
-
-
-
-
+EMAIL_HOST_PASSWORD = 'oeyvrvyvigpdvxoi'
