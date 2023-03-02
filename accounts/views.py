@@ -32,8 +32,15 @@ def registerPage(request):
 
     context = {'form': form}
     return render(request, 'accounts/register.html', context)
-
-
+def create_customer(request):
+    form = CreateUserForm()
+    if request.method == 'POST':
+        form = CreateUserForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            return redirect('home')
+    context = {'form': form}
+    return render(request, 'accounts/create_customer.html', context)
 @unauthenticated_user
 def loginPage(request):
 
